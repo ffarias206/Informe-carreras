@@ -103,12 +103,14 @@
           <p class="tag">Basado en el texto: <em>“Elección de carrera universitaria. Factores que influyen en la elección”</em>.</p>
         </div>
       </div>
-      <div class="card" style="margin-top:18px">
-        <h3>Audio de reflexión (subí tu archivo)</h3>
-        <p class="tag">Requisito del trabajo: pequeño audio acompañado de imágenes.</p>
-        <input type="file" accept="audio/*" id="audioInput"/>
-        <audio id="audioPlayer" controls style="width:100%;margin-top:10px"></audio>
-      </div>
+      <div class="card">
+  <h3>Audio de reflexión</h3>
+  <audio class="video" controls>
+    <source src="audio/reflexion.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+  </audio>
+</div>
+
     </section>
 
     <!-- COMPUTACIÓN -->
@@ -186,21 +188,21 @@
     </section>
 
     <!-- ENTREVISTAS -->
-    <section id="entrevistas" class="section">
-      <h2 class="section-title">4) Extractos de entrevistas (≤ 5 min)</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3>Ingeniería en Computación — Testimonio UNC</h3>
-          <iframe class="video" src="https://www.youtube.com/embed/gK_mxB_LTdY" title="Testimonio Ing. en Computación UNC" allowfullscreen></iframe>
-          <p class="tag">Si necesitás un fragmento ≤ 5 min, recortá el tramo más relevante.</p>
-        </div>
-        <div class="card">
-          <h3>Ingeniería Electrónica — FCEFyN · UNC</h3>
-          <iframe class="video" src="https://www.youtube.com/embed/VEdj4LYYKbw" title="Ing. Electrónica FCEFyN" allowfullscreen></iframe>
-          <p class="tag">Duración ~3:25 (cumple el requisito).</p>
-        </div>
-      </div>
-    </section>
+    <div class="card">
+  <h3>Ingeniería en Computación — Testimonio UNC</h3>
+  <video class="video" controls>
+    <source src="videos/compu.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+  </video>
+</div>
+<div class="card">
+  <h3>Ingeniería Electrónica — FCEFyN · UNC</h3>
+  <video class="video" controls>
+    <source src="videos/electronica.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+  </video>
+</div>
+
 
     <!-- ESTADÍSTICAS -->
     <section id="estadisticas" class="section">
