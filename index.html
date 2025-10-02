@@ -1,11 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Informe de Carreras 2025 — Ingeniería en Computación e Ingeniería Electrónica (UNC)</title>
+<meta name="description" content="Informe interactivo: Ingeniería en Computación e Ingeniería Electrónica en la FCEFyN–UNC. Factores internos/externos, duración, plan de estudios, salidas laborales, entrevistas y estadísticas." />
+<style>
+  :root{
+    --bg:#0e0f12; --surface:#171923; --surface-2:#1f2230; --text:#e8eaf2; --muted:#a7b0c0; --brand:#7c9cff; --brand-2:#65d6a6; --danger:#ff8c8c; --ok:#a2ffb3; --border:#2a2f42; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell, "Helvetica Neue",Arial,sans-serif;line-height:1.6}
+  a{color:var(--brand)}
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  header.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(124,156,255,.12),rgba(101,214,166,.10));border-bottom:1px solid var(--border)}
+  .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:56px 24px}
+  .hero h1{font-size:clamp(28px,4vw,46px);margin:0 0 10px}
+  .hero p{color:var(--muted);margin:0 0 20px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:22px}
+  .section{padding:36px 0;border-top:1px solid var(--border)}
+  h2.section-title{font-size:clamp(22px,3vw,30px);margin:0 0 16px}
+  h3{margin:22px 0 8px}
+  ul{padding-left:18px}
+  .grid{display:grid;gap:22px}
+  .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.two,.three{grid-template-columns:1fr}}
+  .pill{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);color:var(--muted);font-size:13px;margin:0 8px 8px 0}
+  .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;background:var(--surface-2);border:1px solid var(--border);padding:2px 6px;border-radius:6px}
+  .notice{background:rgba(101,214,166,.08);border:1px dashed var(--brand-2);padding:14px;border-radius:12px;color:var(--ok)}
+  .link-list a{display:block;padding:10px 12px;border:1px solid var(--border);border-radius:12px;text-decoration:none;background:var(--surface-2);margin-bottom:10px}
+  .tag{font-size:12px;color:var(--muted)}
+  .footer{padding:40px 0;border-top:1px solid var(--border);color:var(--muted)}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:14px}
+  .video{aspect-ratio:16/9;width:100%;border:none;border-radius:14px;box-shadow:var(--shadow)}
+  .stat-card{padding:18px;border-radius:16px;background:var(--surface-2);border:1px solid var(--border)}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+  .legend span{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px}
+  .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:var(--brand);color:#0b1020;text-decoration:none;border:0;font-weight:600}
+  .btn.alt{background:var(--brand-2)}
+  .sticky-nav{position:sticky;top:0;z-index:9;background:rgba(14,15,18,.65);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .sticky-nav a{color:var(--muted);text-decoration:none;padding:12px 10px;display:inline-block}
+  .sticky-nav a:hover{color:var(--text)}
+</style>
 </head>
 <body>
-    <h1>Holaaaa</h1>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>Informe de Carreras 2025</h1>
+        <p>Comparativo interactivo de <strong>Ingeniería en Computación</strong> e <strong>Ingeniería Electrónica</strong> (FCEFyN–UNC): motivaciones, factores internos/externos, duración, planes de estudio, salidas laborales, entrevistas y datos en Argentina.</p>
+        <div>
+          <span class="pill">Modo oscuro</span>
+          <span class="pill">UNC · FCEFyN</span>
+          <span class="pill">Interactivo</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Índice rápido</h3>
+        <nav class="link-list">
+          <a href="#factores">1) Factores e intereses</a>
+          <a href="#computacion">2) Ingeniería en Computación</a>
+          <a href="#electronica">3) Ingeniería Electrónica</a>
+          <a href="#entrevistas">4) Extractos de entrevistas</a>
+          <a href="#estadisticas">5) Estadísticas (AR)</a>
+          <a href="#conclusion">6) Conclusión reflexiva</a>
+          <a href="#fuentes">Fuentes y enlaces</a>
+        </nav>
+      </div>
+    </div>
+    <div class="sticky-nav container" aria-label="Atajos">
+      <a href="#factores">Factores</a>
+      <a href="#computacion">Compu</a>
+      <a href="#electronica">Electrónica</a>
+      <a href="#entrevistas">Entrevistas</a>
+      <a href="#estadisticas">Estadísticas</a>
+      <a href="#conclusion">Conclusión</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- FACTORES -->
+    <section id="factores" class="section">
+      <h2 class="section-title">1) Motivación y factores de elección</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>¿Por qué estas carreras?</h3>
+          <p>Vinculan tecnología, innovación y resolución de problemas. Permiten crear soluciones reales con impacto, ya sea en software (Computación) o en hardware y sistemas (Electrónica).</p>
+          <div class="legend">
+            <span class="chip">🧠 Interés en matemática, lógica y programación</span>
+            <span class="chip">🧪 Gustos por física y sistemas</span>
+            <span class="chip">🚀 Vocación por construir tecnología útil</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Factores internos y externos</h3>
+          <ul>
+            <li><strong>Internos:</strong> personalidad, intereses, aptitudes (matemática, lógica, programación), experiencias positivas previas.</li>
+            <li><strong>Externos:</strong> oferta educativa en Córdoba (UNC), demanda laboral en informática/electrónica, prestigio institucional, duración de la carrera.</li>
+          </ul>
+          <p class="tag">Basado en el texto: <em>“Elección de carrera universitaria. Factores que influyen en la elección”</em>.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3>Audio de reflexión (subí tu archivo)</h3>
+        <p class="tag">Requisito del trabajo: pequeño audio acompañado de imágenes.</p>
+        <input type="file" accept="audio/*" id="audioInput"/>
+        <audio id="audioPlayer" controls style="width:100%;margin-top:10px"></audio>
+      </div>
+    </section>
+
+    <!-- COMPUTACIÓN -->
+    <section id="computacion" class="section">
+      <h2 class="section-title">2) Ingeniería en Computación — FCEFyN · UNC</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Descripción general</h3>
+          <p>Forma profesionales capaces de diseñar, implementar y evaluar sistemas computacionales, integrando <strong>software</strong> y <strong>hardware</strong>: programación, arquitectura, sistemas operativos, redes, inteligencia artificial e ingeniería de software.</p>
+          <p><strong>Duración estimada:</strong> 5 años y medio (universidad pública).</p>
+        </div>
+        <div class="card">
+          <h3>Plan de estudios (síntesis)</h3>
+          <ul>
+            <li>Matemática (Álgebra, Análisis, Probabilidad)</li>
+            <li>Física y Electrónica Digital</li>
+            <li>Programación y Algoritmos</li>
+            <li>Arquitectura de Computadoras</li>
+            <li>Redes y Sistemas Distribuidos</li>
+            <li>Inteligencia Artificial</li>
+            <li>Ingeniería de Software</li>
+            <li>Proyecto Final</li>
+          </ul>
+          <a class="btn" href="https://fcefyn.unc.edu.ar/facultad/secretarias/academica/escuelas/ingenieria-computacion/carrera-ingenieria-en-computacion/plan-de-estudios-2025-/" target="_blank" rel="noopener">Ver plan oficial 2025</a>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3>Salidas laborales</h3>
+        <div class="grid three">
+          <div class="stat-card"><strong>Desarrollo de software</strong><br/><span class="tag">Aplicaciones, back-end, front-end</span></div>
+          <div class="stat-card"><strong>Sistemas & Redes</strong><br/><span class="tag">Sistemas operativos, redes, seguridad</span></div>
+          <div class="stat-card"><strong>IA & Datos</strong><br/><span class="tag">IA, robótica, ciencia de datos</span></div>
+          <div class="stat-card"><strong>Hardware</strong><br/><span class="tag">Arquitectura, embebidos</span></div>
+          <div class="stat-card"><strong>Docencia/Investigación</strong><br/><span class="tag">Universidades, I+D</span></div>
+          <div class="stat-card"><strong>Consultoría</strong><br/><span class="tag">Empresas y sector público</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ELECTRÓNICA -->
+    <section id="electronica" class="section">
+      <h2 class="section-title">3) Ingeniería Electrónica — FCEFyN · UNC</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Descripción general</h3>
+          <p>Prepara profesionales para diseñar, analizar y optimizar <strong>circuitos, telecomunicaciones, control y automatización</strong>, electrónica analógica/digital, microprocesadores y sistemas de potencia.</p>
+          <p><strong>Duración estimada:</strong> 5 años y medio (universidad pública).</p>
+        </div>
+        <div class="card">
+          <h3>Plan de estudios (síntesis)</h3>
+          <ul>
+            <li>Matemática y Física</li>
+            <li>Circuitos Eléctricos y Dispositivos Semiconductores</li>
+            <li>Electrónica Analógica y Digital</li>
+            <li>Señales y Sistemas · Comunicaciones</li>
+            <li>Control Automático</li>
+            <li>Microprocesadores · Embebidos</li>
+            <li>Sistemas de Potencia</li>
+            <li>Proyecto Final</li>
+          </ul>
+          <a class="btn" href="https://fcefyn.unc.edu.ar/facultad/secretarias/academica/escuelas/escuela-de-ingenieria-electronica/carrera-ingenieria-electronica/plan-de-estudios-2025/" target="_blank" rel="noopener">Ver plan oficial 2025</a>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3>Salidas laborales</h3>
+        <div class="grid three">
+          <div class="stat-card"><strong>Telecomunicaciones</strong><br/><span class="tag">Redes, RF, transmisión</span></div>
+          <div class="stat-card"><strong>Automatización/Control</strong><br/><span class="tag">Industria, PLC, SCADA</span></div>
+          <div class="stat-card"><strong>Diseño de hardware</strong><br/><span class="tag">PCB, microelectrónica</span></div>
+          <div class="stat-card"><strong>Energía/Potencia</strong><br/><span class="tag">Convertidores, electrónica de potencia</span></div>
+          <div class="stat-card"><strong>I+D y Docencia</strong><br/><span class="tag">Universidades, centros</span></div>
+          <div class="stat-card"><strong>Embebidos</strong><br/><span class="tag">Microcontroladores, tiempo real</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTREVISTAS -->
+    <section id="entrevistas" class="section">
+      <h2 class="section-title">4) Extractos de entrevistas (≤ 5 min)</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Ingeniería en Computación — Testimonio UNC</h3>
+          <iframe class="video" src="https://www.youtube.com/embed/gK_mxB_LTdY" title="Testimonio Ing. en Computación UNC" allowfullscreen></iframe>
+          <p class="tag">Si necesitás un fragmento ≤ 5 min, recortá el tramo más relevante.</p>
+        </div>
+        <div class="card">
+          <h3>Ingeniería Electrónica — FCEFyN · UNC</h3>
+          <iframe class="video" src="https://www.youtube.com/embed/VEdj4LYYKbw" title="Ing. Electrónica FCEFyN" allowfullscreen></iframe>
+          <p class="tag">Duración ~3:25 (cumple el requisito).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <section id="estadisticas" class="section">
+      <h2 class="section-title">5) Estadísticas en Argentina (referenciales)</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Inserción laboral aproximada</h3>
+          <canvas id="chart1" height="180"></canvas>
+          <div class="legend">
+            <span><i style="background:#7c9cff"></i> Computación: 63% software/servicios</span>
+            <span><i style="background:#65d6a6"></i> Electrónica: 72% empresas tec/industria</span>
+          </div>
+          <p class="tag">Fuentes: CONFEDI (2022), Observatorio Educación Superior y TIC (2023).</p>
+        </div>
+        <div class="card">
+          <h3>Notas</h3>
+          <p class="notice">Estos datos son orientativos para la maqueta del informe. Si necesitás cifras exactas año a año, podemos actualizar la sección con tablas y enlaces directos.</p>
+          <ul>
+            <li><a target="_blank" rel="noopener" href="https://confedi.org.ar">CONFEDI</a></li>
+            <li><a target="_blank" rel="noopener" href="https://www.argentina.gob.ar/educacion/observatorio">Observatorio Educación Superior y TIC</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSIÓN -->
+    <section id="conclusion" class="section">
+      <h2 class="section-title">6) Conclusión reflexiva</h2>
+      <div class="card">
+        <p>La <strong>Ingeniería en Computación</strong> se orienta más a software, sistemas y soluciones inteligentes; la <strong>Ingeniería Electrónica</strong> se centra en hardware, telecomunicaciones y automatización. Mis intereses en matemática, lógica y programación (factores internos), junto con la oferta y demanda del contexto cordobés/argentino (factores externos), hacen que ambas opciones sean coherentes con mi proyecto formativo y profesional.</p>
+      </div>
+    </section>
+
+    <!-- FUENTES -->
+    <section id="fuentes" class="section">
+      <h2 class="section-title">Fuentes y enlaces oficiales</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>UNC · FCEFyN</h3>
+          <ul>
+            <li><a target="_blank" rel="noopener" href="https://fcefyn.unc.edu.ar/facultad/secretarias/academica/escuelas/ingenieria-computacion/carrera-ingenieria-en-computacion/">Carrera Ingeniería en Computación (página oficial)</a></li>
+            <li><a target="_blank" rel="noopener" href="https://fcefyn.unc.edu.ar/facultad/secretarias/academica/escuelas/ingenieria-computacion/carrera-ingenieria-en-computacion/plan-de-estudios-2025-/">Plan de estudios 2025 · Ingeniería en Computación</a></li>
+            <li><a target="_blank" rel="noopener" href="https://fcefyn.unc.edu.ar/facultad/secretarias/academica/escuelas/escuela-de-ingenieria-electronica/carrera-ingenieria-electronica/">Carrera Ingeniería Electrónica (página oficial)</a></li>
+            <li><a target="_blank" rel="noopener" href="https://fcefyn.unc.edu.ar/facultad/secretarias/academica/escuelas/escuela-de-ingenieria-electronica/carrera-ingenieria-electronica/plan-de-estudios-2025/">Plan de estudios 2025 · Ingeniería Electrónica</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Videos citados</h3>
+          <ul>
+            <li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=gK_mxB_LTdY">Testimonio · Ing. en Computación (UNC)</a></li>
+            <li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=VEdj4LYYKbw">Ing. Electrónica · FCEFyN (UNC)</a></li>
+          </ul>
+          <h3 style="margin-top:18px">Estadísticas</h3>
+          <ul>
+            <li><a target="_blank" rel="noopener" href="https://confedi.org.ar">CONFEDI</a></li>
+            <li><a target="_blank" rel="noopener" href="https://www.argentina.gob.ar/educacion/observatorio">Observatorio Educación Superior y TIC</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>Hecho para la actividad “Informe interactivo de carreras” — Córdoba, 2025.</p>
+  </footer>
+
+<script>
+// Cargar audio seleccionado
+const audioInput = document.getElementById('audioInput');
+const audioPlayer = document.getElementById('audioPlayer');
+if (audioInput) {
+  audioInput.addEventListener('change', (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    audioPlayer.src = url;
+    audioPlayer.play().catch(()=>{});
+  });
+}
+
+// Gráfico simple (sin librerías) para insertar porcentajes referenciales
+function drawBarChart(canvasId, valueA, valueB){
+  const c = document.getElementById(canvasId);
+  if(!c) return; const ctx = c.getContext('2d');
+  const W = c.width = c.clientWidth; const H = c.height = c.clientHeight;
+  ctx.clearRect(0,0,W,H);
+  const pad = 28; const bw = (W - pad*3)/2; const max = 100; 
+  const hA = (valueA/max)*(H - pad*2); const hB = (valueB/max)*(H - pad*2);
+  // Ejes
+  ctx.strokeStyle = '#2a2f42'; ctx.lineWidth = 1; ctx.strokeRect(pad, pad, W - pad*2, H - pad*2);
+  // Barras
+  const baseY = H - pad;
+  // A
+  ctx.fillStyle = '#7c9cff';
+  ctx.fillRect(pad*1.5, baseY - hA, bw, hA);
+  // B
+  ctx.fillStyle = '#65d6a6';
+  ctx.fillRect(pad*2.5 + bw, baseY - hB, bw, hB);
+  // Etiquetas
+  ctx.fillStyle = '#e8eaf2'; ctx.font = '14px system-ui'; ctx.textAlign = 'center';
+  ctx.fillText('Computación (63%)', pad*1.5 + bw/2, baseY + 18);
+  ctx.fillText('Electrónica (72%)', pad*2.5 + bw + bw/2, baseY + 18);
+}
+
+window.addEventListener('load', ()=> drawBarChart('chart1', 63, 72));
+window.addEventListener('resize', ()=> drawBarChart('chart1', 63, 72));
+</script>
 </body>
 </html>
